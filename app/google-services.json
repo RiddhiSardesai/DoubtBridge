@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "202880203517",
+    "project_id": "doubtbridge-d49d8",
+    "storage_bucket": "doubtbridge-d49d8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202880203517:android:664ad94f01a8ff2ace9c94",
+        "android_client_info": {
+          "package_name": "com.example.doubtbridge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3gZXqXVApxhBUO4mSFj0bzXqsDVP9YEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

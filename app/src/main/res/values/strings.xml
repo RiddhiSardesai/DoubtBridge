@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">DoubtBridge</string>
+    <string name="login_title">DoubtBridge</string>
+    <string name="login_subtitle">Your bridge to clarity</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_button">Login</string>
+    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or_continue_with">Or continue with</string>
+    <string name="google_login">Continue with Google</string>
+    <string name="or_text">OR</string>
+    <string name="signup_title">Create Account</string>
+    <string name="signup_subtitle">Join DoubtBridge today</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="select_role">Select Role</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="dashboard_title">DoubtBridge</string>
+    <string name="trending_doubts">Trending Doubts</string>
+    <string name="ask_a_doubt">Ask a Doubt</string>
+    <string name="search_hint">Search doubts...</string>
+    <string name="hello_user">Hello, Student 👋</string>
+    <string name="solve_now">View</string>
+    <string name="teacher_subtitle">Overview of student doubts and notes</string>
+    <string name="upload_notes_btn">📤 Upload Notes</string>
+    <string name="analytics_btn">📊 Analytics</string>
+    <string name="solutions_count">%1$d Solutions</string>
+    <string name="views_count">%1$d Views</string>
+</resources>

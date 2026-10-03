@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content" app:elevation="0dp">
+        <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            app:title="My Profile" app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/white"
+            android:background="@color/primary"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:paddingBottom="32dp" android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hero section -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="180dp"
+                android:background="@drawable/bg_header_gradient"
+                android:orientation="vertical" android:gravity="center">
+                <!-- Avatar -->
+                <TextView android:id="@+id/profileAvatarBig"
+                    android:layout_width="80dp" android:layout_height="80dp"
+                    android:background="@drawable/bg_circle_primary"
+                    android:gravity="center" android:textSize="32sp" android:textStyle="bold"
+                    android:textColor="@color/primary" android:text="S"/>
+                <TextView android:id="@+id/profileName"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" android:textColor="@color/white"
+                    android:textSize="20sp" android:textStyle="bold" android:text="Student Name"/>
+                <TextView android:id="@+id/profileRole"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp" android:textColor="#CCDDEEFF"
+                    android:textSize="13sp" android:text="Student"/>
+            </LinearLayout>
+
+            <!-- Stats row -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:padding="16dp">
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_weight="1" android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp" app:cardCornerRadius="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="16dp">
+                        <TextView android:id="@+id/tvDoubtsCount" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0"
+                            android:textSize="28sp" android:textStyle="bold" android:textColor="@color/primary"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="My Doubts" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView android:layout_width="0dp"
+                    android:layout_weight="1" android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp" app:cardCornerRadius="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:gravity="center" android:padding="16dp">
+                        <TextView android:id="@+id/tvBookmarksCount" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="0"
+                            android:textSize="28sp" android:textStyle="bold" android:textColor="@color/yellow_bookmark"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Bookmarks" android:textSize="12sp" android:textColor="@color/text_secondary"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Profile info card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp" android:layout_marginTop="4dp"
+                app:cardCornerRadius="20dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Personal Information" android:textSize="16sp"
+                        android:textStyle="bold" android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Name field -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nameLayout"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Full Name" android:layout_marginBottom="12dp"
+                        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nameInput" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Email (read-only) -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailLayout"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Email Address" android:layout_marginBottom="12dp"
+                        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailInput" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:inputType="textEmailAddress"
+                            android:enabled="false"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Department -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Department" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="6dp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginBottom="12dp" app:cardCornerRadius="14dp"
+                        app:strokeWidth="1dp" app:strokeColor="@color/outline">
+                        <Spinner android:id="@+id/deptSpinner"
+                            android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:paddingStart="12dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Class -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Class / Year" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="6dp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginBottom="16dp" app:cardCornerRadius="14dp"
+                        app:strokeWidth="1dp" app:strokeColor="@color/outline">
+                        <Spinner android:id="@+id/classSpinner"
+                            android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:paddingStart="12dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/saveBtn"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:text="Save Profile" android:textStyle="bold"
+                        app:cornerRadius="14dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Account Actions -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp" android:layout_marginTop="16dp"
+                app:cardCornerRadius="20dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnChangePassword"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:text="🔑  Change Password" android:textColor="@color/primary"
+                        android:gravity="start|center_vertical" android:paddingStart="12dp"/>
+
+                    <View android:layout_width="match_parent" android:layout_height="1dp"
+                        android:background="@color/divider" android:layout_marginHorizontal="12dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLogout"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="match_parent" android:layout_height="52dp"
+                        android:text="🚪  Logout" android:textColor="#E53935"
+                        android:gravity="start|center_vertical" android:paddingStart="12dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

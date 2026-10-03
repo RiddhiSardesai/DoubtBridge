@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_toolbar_gradient"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_back"
+                    android:contentDescription="Back"
+                    app:tint="@color/white"
+                    android:layout_marginEnd="12dp"
+                    android:padding="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Post a Doubt"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Get answers from teachers &amp; AI"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:paddingBottom="90dp" android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp" app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="20dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Describe your doubt" android:textSize="17sp"
+                        android:textStyle="bold" android:textColor="@color/text_primary"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Title -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Doubt Title" android:layout_marginBottom="14dp"
+                        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/titleInput" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:inputType="textCapSentences"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Subject -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Subject" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="6dp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginBottom="14dp" app:cardCornerRadius="14dp"
+                        app:strokeWidth="1dp" app:strokeColor="@color/outline">
+                        <Spinner android:id="@+id/subjectSpinner"
+                            android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:paddingStart="12dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Department -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Department" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="6dp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginBottom="14dp" app:cardCornerRadius="14dp"
+                        app:strokeWidth="1dp" app:strokeColor="@color/outline">
+                        <Spinner android:id="@+id/deptSpinner"
+                            android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:paddingStart="12dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Class -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Class / Year" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginBottom="6dp"/>
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginBottom="14dp" app:cardCornerRadius="14dp"
+                        app:strokeWidth="1dp" app:strokeColor="@color/outline">
+                        <Spinner android:id="@+id/classSpinner"
+                            android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:paddingStart="12dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Description -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Detailed Description"
+                        app:boxCornerRadiusTopStart="14dp" app:boxCornerRadiusTopEnd="14dp"
+                        app:boxCornerRadiusBottomStart="14dp" app:boxCornerRadiusBottomEnd="14dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/descInput" android:layout_width="match_parent"
+                            android:layout_height="wrap_content" android:gravity="top"
+                            android:inputType="textMultiLine" android:minLines="4"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Image Attachment -->
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Attach Image (Optional)" android:textStyle="bold"
+                        android:textColor="@color/text_primary" android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/imagePickerZone"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        app:cardCornerRadius="14dp" app:strokeWidth="1dp" app:strokeColor="@color/outline"
+                        app:cardBackgroundColor="#F8F9FA" android:clickable="true" android:focusable="true">
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:orientation="vertical" android:gravity="center" android:padding="12dp">
+
+                            <ImageView
+                                android:id="@+id/previewImage"
+                                android:layout_width="match_parent" android:layout_height="180dp"
+                                android:scaleType="centerCrop" android:visibility="gone"
+                                android:layout_marginBottom="8dp"/>
+
+                            <LinearLayout android:id="@+id/pickerTextLayout"
+                                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:orientation="horizontal" android:gravity="center">
+                                <ImageView android:layout_width="20dp" android:layout_height="20dp"
+                                    android:src="@android:drawable/ic_menu_camera" app:tint="@color/primary"/>
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                    android:text=" Tap to add image/photo" android:textColor="@color/primary"
+                                    android:textSize="14sp" android:textStyle="bold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="14dp"
+                        android:background="@color/primary_container"
+                        android:padding="12dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                            android:text="💡 If teacher notes match your doubt, you'll get an instant answer!"
+                            android:textSize="12sp" android:textColor="@color/primary"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent" android:layout_height="54dp"
+        android:layout_gravity="bottom" android:layout_margin="16dp"
+        android:text="Post Doubt" android:textStyle="bold" app:cornerRadius="16dp"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

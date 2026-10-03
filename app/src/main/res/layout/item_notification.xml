@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp" android:layout_marginVertical="5dp"
+    app:cardCornerRadius="16dp" app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/surface">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="16dp" android:gravity="center_vertical">
+        <TextView android:id="@+id/tvIcon"
+            android:layout_width="44dp" android:layout_height="44dp"
+            android:background="@drawable/bg_circle_primary"
+            android:gravity="center" android:textSize="20sp" tools:text="✅"/>
+        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:orientation="vertical"
+            android:layout_marginStart="12dp">
+            <TextView android:id="@+id/tvTitle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/text_primary" android:textSize="14sp"
+                android:textStyle="bold" tools:text="Your doubt was answered!"/>
+            <TextView android:id="@+id/tvMessage"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp" android:textColor="@color/text_secondary"
+                android:textSize="12sp" android:maxLines="2" android:ellipsize="end"
+                tools:text="Teacher answered your Physics question"/>
+            <TextView android:id="@+id/tvTime"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:textColor="@color/text_hint"
+                android:textSize="11sp" tools:text="5 min ago"/>
+        </LinearLayout>
+        <View android:id="@+id/unreadDot"
+            android:layout_width="8dp" android:layout_height="8dp"
+            android:background="@color/accent" android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
